@@ -1,2 +1,3 @@
 # Playaround
-A set of code for trying out stuff
+
+The best way to learn is to try things out.
