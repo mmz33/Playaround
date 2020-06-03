@@ -3,6 +3,7 @@ from keras.applications.vgg16 import VGG16, preprocess_input
 from keras.preprocessing.image import load_img, img_to_array
 import matplotlib.pyplot as plt
 from numpy import expand_dims
+import sys
 
 """
 Code to visualize some filters and feature maps for a CNN
@@ -67,5 +68,10 @@ def visualize_feat_maps(layer_idx, image_path):
     plt.show()
 
 
-visualize_weights(1, 6)
-visualize_feat_maps(1, 'bird.jpg')
+if __name__ == '__main__':
+    if len(sys.argv) == 1:
+        print('usage: %s <img>' % sys.argv[0])
+        sys.exit(-1)
+    img = sys.argv[1]
+    #visualize_weights(1, 6)
+    visualize_feat_maps(10, img)
